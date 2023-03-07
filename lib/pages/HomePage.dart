@@ -151,20 +151,18 @@ class _homePageState extends State<homePage> {
               ],
             ),
             Container(
-              padding: EdgeInsets.all(30),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(20)),
-                color: Color(0xFFF1F3F6),
-              ),
-              /*child: Column(
+              child: Column(
                 children: [
                   serviceWidget(300,"Sendoney","Sendoney"),
                   serviceWidget(-30042,"ReceiveMoney","Sendoney"),
                   serviceWidget(1042,"MobileRecharge","Sendoney"),
                   serviceWidget(-5009,"ElectricityBill","Sendoney"),
+                  serviceWidget(-5009,"ElectricityBill","Sendoney"),
+                  serviceWidget(-5009,"ElectricityBill","Sendoney"),
+                  serviceWidget(-5009,"ElectricityBill","Sendoney"),
                 ],
 
-              ),*/
+              ),
             ),
 
           ],
@@ -172,33 +170,29 @@ class _homePageState extends State<homePage> {
       ),
     );
   }
-  Column serviceWidget(double amout, String date,String wallet){
-    return Column(
-      children: [
-        Expanded(
-            child: InkWell(
-              onTap: (){
-              },
-              child: Container(
-                margin: EdgeInsets.all(4),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(20)),
-                  color: Color(0xFFF1F3F6)
-                ),
-                child: Center(
-                  child: Container(
-                    margin: EdgeInsets.all(25),
-                  ),
-                ),
-              ),
-            ),
-        ),
-        SizedBox(height: 5,),
-        Text(date,style: TextStyle(
-          fontFamily: 'avenir',
-          fontSize: 14,
-        ),textAlign: TextAlign.center,)
-      ],
+  Container serviceWidget(double amout, String date,String wallet) {
+    return Container(
+      margin: EdgeInsets.only(top: 10),
+      padding: EdgeInsets.all(30),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(20)),
+        color: Color(0xFFF1F3F6),
+      ),
+      child: Row(
+        children: [
+          Text('Service',style: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.w800,
+              fontFamily: 'avenir'
+          ),),
+          Container(
+            height: 10,
+            width: 10,
+            child: Icon(Icons.dialpad),
+          )
+
+        ],
+      ),
     );
   }
   Container avatarWidget(String img,String name){
